@@ -2,18 +2,20 @@
 
 void ParseArgument(int argc, char* argv[]) {
 	
-	CHAR CommandLineArgument[2][10] = { "-x","-e" };
+	CHAR CommandLineArgument[2][10] = { "-e","-x" };
 	int index = 0;
-	for (int i = 0; i < argc; i++) {
-		if (strcmp(argv[i], CommandLineArgument[index]) == 0)
-		{
-			if (index == 0) {
-				ExePath = argv[i + 1];
-				index++;
-			}
-			else if (index == 1) {
-				FileExtension = argv[i + 1];
-				index++;
+	for (int y = 0; y < 2; y++) {
+		for (int i = 0; i < argc; i++) {
+			if (strcmp(argv[i], CommandLineArgument[index]) == 0)
+			{
+				if (index == 0) {
+					ExePath = argv[i + 1];
+					index++;
+				}
+				else if (index == 1) {
+					FileExtension = argv[i + 1];
+					index++;
+				}
 			}
 		}
 	}
