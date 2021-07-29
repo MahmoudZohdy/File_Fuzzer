@@ -44,8 +44,11 @@ void GetNumberOfFilesInSamplesDirectory();
 void Fuzz() {
 
 	GetNumberOfFilesInSamplesDirectory();
-
+	DWORD TestCount = 1;
 	while (TRUE) {
+		
+		printf("Starting the Test Case Number %ld\n",TestCount);
+		TestCount++;
 
 		FUZZ_INFO* FuzzInfo = new FUZZ_INFO;
 		
