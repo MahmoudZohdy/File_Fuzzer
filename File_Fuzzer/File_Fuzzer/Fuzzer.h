@@ -101,7 +101,7 @@ BOOL ChooseTestFile(FUZZ_INFO* FuzzInfo) {
 		std::string FilePath(TempPath.begin(), TempPath.end());
 
 		int found = FilePath.find(FileExtension);
-		if (found != std::string::npos && found == FilePath.size()-4)
+		if (found != std::string::npos && found == FilePath.size()-FileExtension.size())
 			count++;
 
 		if (count == index) {
