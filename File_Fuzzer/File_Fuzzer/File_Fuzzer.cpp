@@ -22,6 +22,10 @@ void ParseArgument(int argc, char* argv[]) {
 
 int main(int argc,char* argv[])
 {
+	if(argc<2){
+		printf("Usage: File_Fuzzer.exe -e <Executable Path> -x <File Extension>");
+		return 0;
+	}
 	ParseArgument(argc, argv);
 	
 	Fuzz();
